@@ -8,11 +8,14 @@ jobs:
       steps:
         - name: checkout repo
           uses: actions/checkout@v4
-        - name: welcome message
-          run: echo "my first file"
 
-        - name: list-files
-          run: ls
+        - name: List and Read files
+          run: |
+            echo "my first file"
+            ls -ltra
+            cat readme.md
+        
+        - name: Generate ASCII Artwork
+          run: cowsay -f dragon "Run for cover , I am a dragon" >> dragon.txt
 
-        - name: read file
-          run: cat README.md
+       
